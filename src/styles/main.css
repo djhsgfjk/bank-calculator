@@ -1,0 +1,50 @@
+body, input, option {
+    font-family: 'Calibri', sans-serif;
+}
+
+[class$='calc-input'], [class$='calc-output'] {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class*='-calc-input__'], [class*='-calc-output__'] {
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    padding: 8px;
+    width: 200px;
+}
+
+[class*='-calc-input__'] {
+    background-color: #f2f2f2;
+}
+
+[class*='-calc-output__'] {
+    background-color: #ffffe3;
+}
+
+.credit-calc-output__schedule, .deposit-calc-output__schedule {
+    width: 664px;
+}
+
+[class$='-schedule'] {
+    display: inline-table;
+}
+
+[class$='-calc'] .label {
+    color: grey;
+}
+
+th, td {
+    padding-right: 16px;
+}
+
+th {
+    padding-bottom: 8px;
+}
+
+table {
+    padding: 8px;
+    justify-content: center;
+    text-align: center;
+}

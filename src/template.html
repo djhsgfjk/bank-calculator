@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+<nav class="nav">
+    <label class="nav__label label">Калькулятор</label>
+    <select class="nav__select nav-select select">
+        <option class="nav-select__option" value="credit">Кредитный</option>
+        <option class="nav-select__option" value="deposit">Депозитный</option>
+    </select>
+</nav>
+<main>
+    <div class="credit-calc">
+        <h1 class="credit-calc__title title">Кредитный калькулятор</h1>
+        <div class="credit-calc__input-container credit-calc-input">
+
+            <div class="credit-calc-input__months credit-months">
+                <label class="credit-months__label label">Срок кредита</label>
+                <div class="credit-months__input input">
+                    <input type="number" min="1" max="600" value="12" name="months">
+                    <span>месяцев</span>
+                </div>
+            </div>
+
+            <div class="credit-calc-input__amount credit-amount">
+                <label class="credit-amount__label label">Сумма кредита</label>
+                <div class="credit-amount__input input">
+                    <input type="number" min="10000" max="100000000" step="10000" value="100000" name="amount">
+                    <span>рублей</span>
+                </div>
+            </div>
+
+            <div class="credit-calc-input__percent credit-percent">
+                <label class="credit-percent__label label">Процентная ставка</label>
+                <div class="credit-percent__input input">
+                    <input type="number" min="1" max="50" step="0.1" value="13" name="percent">
+                    <span>% в год</span>
+                </div>
+            </div>
+
+            <div class="credit-calc-input__repayment credit-repayment">
+                <label class="credit-repayment__label label">Порядок погашения</label>
+                <div class="credit-repayment__select select">
+                    <select>
+                        <option value="annuity">
+                            Аннуитетный
+                        </option>
+                        <option value="differentiated">
+                            Дифференцированный
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="credit-calc__output-container credit-calc-output">
+
+            <div class="credit-calc-output__payment credit-payment">
+                <label class="credit-payment__label label">Общая сумма</label>
+                <div class="credit-payment__output output"></div>
+            </div>
+
+            <div class="credit-calc-output__overpayment credit-overpayment">
+                <label class="credit-overpayment__label label">Переплата</label>
+                <div class="credit-overpayment__output output"></div>
+            </div>
+        </div>
+
+        <div class="credit-calc-output__schedule credit-schedule">
+            <label class="credit-schedule__label label">График платежей</label>
+            <table class="credit-schedule__table table">
+                <thead>
+                <tr>
+                    <th>Месяц</th>
+                    <th>Платеж по кредиту</th>
+                    <th>Остаток долга по кредиту</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="deposit-calc">
+        <h1 class="deposit-calc__title">Депозитный калькулятор</h1>
+        <div class="deposit-calc__input-container deposit-calc-input">
+
+            <div class="deposit-calc-input__months deposit-months">
+                <label class="deposit-months__label label">Срок вклада</label>
+                <div class="deposit-months__input input">
+                    <input type="number" min="1" max="600" value="12" name="months">
+                    <span>месяцев</span>
+                </div>
+            </div>
+
+            <div class="deposit-calc-input__amount deposit-amount">
+                <label class="deposit-amount__label label">Сумма вклада</label>
+                <div class="deposit-amount__input input">
+                    <input type="number" min="10000" max="100000000" step="10000" value="100000" name="amount">
+                    <span>рублей</span>
+                </div>
+            </div>
+
+            <div class="deposit-calc-input__percent deposit-percent">
+                <label class="deposit-percent__label label">Процентная ставка</label>
+                <div class="deposit-percent__input input">
+                    <input type="number" min="1" max="50" step="0.1" value="5" name="percent">
+                    <span>% годовых</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="deposit-calc__output-container deposit-calc-output">
+
+            <div class="deposit-calc-output__payment deposit-payment">
+                <label class="deposit-payment__label label">Сумма вклада в конце срока</label>
+                <div class="deposit-payment__output output"></div>
+            </div>
+
+            <div class="deposit-calc-output__income deposit-income">
+                <label class="deposit-income__label label">Доход</label>
+                <div class="deposit-income__output output"></div>
+            </div>
+        </div>
+
+        <div class="deposit-calc-output__schedule deposit-schedule">
+            <label class="deposit-schedule__label label">График платежей</label>
+            <table class="deposit-schedule__table deposit-table">
+                <thead>
+                <tr>
+                    <th>Месяц</th>
+                    <th>Сумма начислений</th>
+                    <th>Сумма вклада после начислений</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</main>
+</body>
+</html>
