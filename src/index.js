@@ -7,7 +7,7 @@ import depositCalculatorController from "./controllers/depositCalculatorControll
 const calcSelect = document.querySelector('.nav__select')
 calcSelect.addEventListener('change', (e) => {
     document.querySelectorAll("[class$='-calc']").forEach((calc) => {calc.style.display = 'none'})
-    document.querySelector(`.${e.target.value}-calc`).style.display = 'block'
+    document.querySelector(`.${e.target.value}-calc`).style.display = 'flex'
 })
 calcSelect.dispatchEvent(new Event('change'))
 

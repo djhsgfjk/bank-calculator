@@ -3,14 +3,14 @@ import {creditCalculatorAnnuityPayment, creditCalculatorDifferentiatedPayment} f
 function annuityPaymentController(months, amount, percent) {
     const [overpayment, duty, monthlyPayment] = creditCalculatorAnnuityPayment(months, percent, amount)
     console.log(overpayment, duty, monthlyPayment)
-    document.querySelector('.credit-payment__output').textContent = amount + overpayment + ' рублей'
-    document.querySelector('.credit-overpayment__output').textContent = overpayment + ' рублей'
+    document.querySelector('.credit-payment__output').textContent = amount + overpayment + ' $'
+    document.querySelector('.credit-overpayment__output').textContent = overpayment + ' $'
 
     const table = document.querySelector('.credit-schedule__table')
     const thead = table.firstElementChild
     const tbody = table.lastElementChild
     let new_thead = document.createElement('thead')
-    new_thead.innerHTML = '<th>Месяц</th><th>Платеж по кредиту</th><th>Остаток долга по кредиту</th>'
+    new_thead.innerHTML = '<th>Month</th><th>Loan payment</th><th>Remaining debt</th>'
     let new_tbody = document.createElement('tbody')
     for (let i = 0; i < months; i++) {
         let row = new_tbody.insertRow(i)
@@ -25,14 +25,14 @@ function annuityPaymentController(months, amount, percent) {
 function differentiatedPaymentController(months, amount, percent) {
     const [payments, percentPerPayment, basicPayment, creditBalance, overpayment] = creditCalculatorDifferentiatedPayment(months, percent, amount)
     console.log(payments, percentPerPayment, basicPayment, creditBalance, overpayment)
-    document.querySelector('.credit-payment__output').textContent = amount + overpayment + ' рублей'
-    document.querySelector('.credit-overpayment__output').textContent = overpayment + ' рублей'
+    document.querySelector('.credit-payment__output').textContent = amount + overpayment + ' $'
+    document.querySelector('.credit-overpayment__output').textContent = overpayment + ' $'
 
     const table = document.querySelector('.credit-schedule__table')
     const thead = table.firstElementChild
     const tbody = table.lastElementChild
     let new_thead = document.createElement('thead')
-    new_thead.innerHTML = '<th>Месяц</th><th>Платеж по кредиту</th><th>Проценты</th><th>Основная часть</th><th>Остаток долга по кредиту</th>'
+    new_thead.innerHTML = '<th>Месяц</th><th>Loan payment</th><th>Interest</th><th>Main part</th><th>Remaining debt</th>'
     let new_tbody = document.createElement('tbody')
     for (let i = 0; i < months; i++) {
         let row = new_tbody.insertRow(i)

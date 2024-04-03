@@ -6,8 +6,8 @@ export default function depositCalculatorController() {
 
     const [profit, balance, payment, income] = depositCalculator(period, deposit, percent)
     console.log('deposit', profit, balance, payment, income)
-    document.querySelector('.deposit-payment__output').textContent = payment + ' рублей'
-    document.querySelector('.deposit-income__output').textContent = income + ' рублей'
+    document.querySelector('.deposit-payment__output').textContent = payment + ' $'
+    document.querySelector('.deposit-income__output').textContent = income + ' $'
 
     const table = document.querySelector('.deposit-schedule__table')
     const tbody = table.lastElementChild

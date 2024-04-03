@@ -1,9 +1,22 @@
 body, input, option {
     font-family: 'Calibri', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.credit-calc, .deposit-calc {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 [class$='calc-input'], [class$='calc-output'] {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -47,4 +60,9 @@ table {
     padding: 8px;
     justify-content: center;
     text-align: center;
+}
+
+input, select {
+    border: 1px solid darkgrey;
+    border-radius: 3px;
 }
