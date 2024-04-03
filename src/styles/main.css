@@ -18,6 +18,7 @@ body, input, option {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100vw;
 }
 
 [class*='-calc-input__'], [class*='-calc-output__'] {
@@ -37,7 +38,7 @@ body, input, option {
 }
 
 .credit-calc-output__schedule, .deposit-calc-output__schedule {
-    width: 664px;
+    width: 80vw;
 }
 
 [class$='-schedule'] {
@@ -56,13 +57,27 @@ th {
     padding-bottom: 8px;
 }
 
+td {
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+}
+
 table {
     padding: 8px;
     justify-content: center;
     text-align: center;
+    table-layout:fixed;
 }
 
 input, select {
     border: 1px solid darkgrey;
     border-radius: 3px;
+}
+
+@media only screen and (max-width: 480px) {
+    .credit-schedule, .deposit-schedule {
+        overflow-x: auto;
+        display: block;
+    }
 }
