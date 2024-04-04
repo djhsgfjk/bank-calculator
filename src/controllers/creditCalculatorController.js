@@ -32,7 +32,7 @@ function differentiatedPaymentController(months, amount, percent) {
     const thead = table.firstElementChild
     const tbody = table.lastElementChild
     let new_thead = document.createElement('thead')
-    new_thead.innerHTML = '<th>Месяц</th><th>Loan payment</th><th>Interest</th><th>Main part</th><th>Remaining debt</th>'
+    new_thead.innerHTML = '<th>Month</th><th>Loan payment</th><th>Interest</th><th>Main part</th><th>Remaining debt</th>'
     let new_tbody = document.createElement('tbody')
     for (let i = 0; i < months; i++) {
         let row = new_tbody.insertRow(i)
